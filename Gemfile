@@ -36,6 +36,8 @@ group :development, :test do
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
