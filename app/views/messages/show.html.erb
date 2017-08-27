@@ -20,5 +20,23 @@
   <%= @message.priority %>
 </p>
 
+<% if @message.replies %>
+    <p> Replies:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Sender</th>
+          <th>Body</th>
+          <th>Sent</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @message.replies %>
+      </tbody>
+    </table>
+<%end%>
+
+
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>

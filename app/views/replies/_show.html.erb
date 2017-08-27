@@ -2,18 +2,18 @@
 
 <p>
   <strong>Sender:</strong>
-  <%= @reply.sender %>
+  <%= reply.sender %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @reply.body %>
+  <%= reply.body %>
 </p>
 
 <p>
   <strong>Message:</strong>
-  <%= @reply.message %>
+  <%= reply.message %>
 </p>
 
-<%= link_to 'Edit', edit_reply_path(@reply) %> |
+<%= link_to 'Edit', edit_reply_path(reply) %> |
 <%= link_to 'Back', replies_path %>
