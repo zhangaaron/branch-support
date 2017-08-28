@@ -52,7 +52,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to @message, notice: 'Message was successfully updated.' }
         format.json { render :show, status: :ok, location: @message }
       else
-        format.html { render :edit }
+        format.html { redirect_to @message, flash: {reply_errors: @message.errors.full_messages.join("\n")} }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end

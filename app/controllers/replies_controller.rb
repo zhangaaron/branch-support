@@ -31,7 +31,7 @@ class RepliesController < ApplicationController
         format.html { redirect_to @reply.message, notice: 'Reply was successfully created.' }
         format.json { render :show, status: :created, location: @reply }
       else
-        format.html { render :new }
+        format.html { redirect_to @reply.message, flash: {reply_errors: @reply.errors.full_messages.join("\n")} }
         format.json { render json: @reply.errors, status: :unprocessable_entity }
       end
     end

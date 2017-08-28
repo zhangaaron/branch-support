@@ -1,3 +1,15 @@
+<% if flash['reply_errors'].present?%>
+    <div id="error_explanation">
+      <%= flash['reply_errors'] %>
+    </div>
+<% end %>
+<% if flash['message_errors'].present?%>
+    <div id="error_explanation">
+      <%= flash['message_errors'] %>
+    </div>
+<% end %>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -34,6 +46,4 @@
 <p> Write a response...</p>
 <%= render 'replies/form' %>
 
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
