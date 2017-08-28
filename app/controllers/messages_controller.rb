@@ -15,6 +15,8 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    @reply = Reply.new
+
   end
 
   # GET /messages/new

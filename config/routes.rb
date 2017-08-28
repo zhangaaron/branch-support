@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :messages
-  resources :replies
+  resources :messages do
+    resources :replies
+  end
   root 'messages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
