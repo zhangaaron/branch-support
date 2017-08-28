@@ -1,28 +1,33 @@
 <% if flash['reply_errors'].present?%>
-    <div id="error_explanation">
+    <div class="alert alert-danger" role="alert">
       <%= flash['reply_errors'] %>
     </div>
 <% end %>
 <% if flash['message_errors'].present?%>
-    <div id="error_explanation">
+    <div class="alert alert-danger" role="alert">
       <%= flash['message_errors'] %>
     </div>
 <% end %>
 
+<div class="card w-100">
+  <div class="card-block">
+    <div class="row">
+      <div class="col">
+        <div class="card-title">
+          <h4>Sender: <%=@message.sender%></h4>
+        </div>
+        <p class="card-subtitle mb-2 text-muted"><%= l @message.created_at%></p>
+        <div class="card-text">
+          <p><%=@message.body%></p>
+        </div>
+      </div>
+      <div class="col text-right">
+        <%= render 'updateResolvedOrPriority' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Sender:</strong>
-  <%= @message.sender %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @message.body %>
-</p>
-<p> Update ticket status:</p>
-<%= render 'updateResolvedOrPriority' %>
 
 <% if @message.replies %>
     <p> Replies:</p>
