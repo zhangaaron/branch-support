@@ -4,7 +4,12 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = filter_params['hide_resolved'].present? ? Message.not_resolved : Message.all
+    if filter_params['order'].present? and filter_params['order'] == 'priority'
+        @messages = @messages.order_by_priority
+    else
+        @messages = @messages.order_by_most_recent
+    end
   end
 
   # GET /messages/1
@@ -66,9 +71,12 @@ class MessagesController < ApplicationController
     def set_message
       @message = Message.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
       params.require(:message).permit(:sender, :body, :resolved, :priority)
     end
+
+  def filter_params
+    params.slice('order', 'hide_resolved')
+  end
 end

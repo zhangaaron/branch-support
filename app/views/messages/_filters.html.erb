@@ -1,0 +1,11 @@
+
+<%= form_tag("/", method: "get") do %>
+    <p> Order by:</p>
+    <%= radio_button_tag(:order, :priority, (params[:order].present? and params[:order] == 'priority') ) %>
+    <%= label_tag(:priority, "priority") %>
+    <%= radio_button_tag(:order, :created,  (params[:order].present? and params[:order] == 'created') ) %>
+    <%= label_tag(:created, "created") %>
+    <%= check_box_tag :hide_resolved, '1', params[:hide_resolved].present?%>
+    <%= label_tag(:hide_resolved, "Hide resolved") %>
+    <%= submit_tag("submit") %>
+<% end %>
