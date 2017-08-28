@@ -9,16 +9,8 @@
   <strong>Body:</strong>
   <%= @message.body %>
 </p>
-
-<p>
-  <strong>Resolved:</strong>
-  <%= @message.resolved %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @message.priority %>
-</p>
+<p> Update ticket status:</p>
+<%= render 'updateResolvedOrPriority' %>
 
 <% if @message.replies %>
     <p> Replies:</p>
@@ -36,6 +28,8 @@
       </tbody>
     </table>
 <%end%>
+
+
 
 <p> Write a response...</p>
 <%= render 'replies/form' %>
