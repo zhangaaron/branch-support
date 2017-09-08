@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :logged_in?
 
   def logged_in?
-    if not session["user"]
+    if not session['user']
       redirect_to login_path
     end
   end
