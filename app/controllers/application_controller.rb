@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     if not session['user']
-      redirect_to login_path
+      redirect_to login_path and return
     end
-    @current_user =  User.find(session['user'])
+    @current_user = User.find_by_id(session['user'])
   end
 end
