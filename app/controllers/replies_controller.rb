@@ -69,6 +69,6 @@ class RepliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reply_params
-      params.require(:reply).permit(:sender, :body, :message_id).merge({message_id: params[:message_id]})
+      params.require(:reply).permit(:sender, :body, :message_id).merge({message_id: params[:message_id], user_id: session[:user]})
     end
 end

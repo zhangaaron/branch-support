@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
     if not session['user']
       redirect_to login_path
     end
+    @current_user =  User.find(session['user'])
   end
 end

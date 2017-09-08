@@ -1,10 +1,5 @@
 <%= form_for [@message, @reply] do |f| %>
   <div class-="card w-100">
-
-    <div class="field">
-      <%= f.label :sender %><br>
-      <%= f.text_field :sender %>
-    </div>
     <div class="field">
       <%= f.label :body %><br>
       <%= f.text_area :body %>

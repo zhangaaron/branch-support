@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1> Branch Support</h1>
+<nav class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand" href="/">
+      <%= image_tag('branch_logo.png', width: '80px' )%>
+  </a>
+  <% if @current_user %>
+      <p class="white"> Welcome, <%= @current_user.name%> </p>
+      <%= link_to("logout", logout_path) %>
+  <% end %>
+</nav>
+
 
 <%= yield %>
 

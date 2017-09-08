@@ -1,7 +1,7 @@
 <div class="card w-100">
   <div class="card-block">
     <div class="card-title">
-      <h4>Sender: <%=reply.sender%></h4>
+      <h4>Sender: <%= reply.user ? reply.user.name : reply.sender %> </h4>
     </div>
     <p class="card-subtitle mb-2 text-muted"><%=l reply.created_at%></p>
     <div class="card-text">
