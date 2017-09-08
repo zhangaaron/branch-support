@@ -28,23 +28,7 @@
   </div>
 </div>
 
-
-<% if @message.replies %>
-    <p> Replies:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Sender</th>
-          <th>Body</th>
-          <th>Sent</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @message.replies %>
-      </tbody>
-    </table>
-<%end%>
+<%= render @message.replies %>
 
 
 
