@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<%= form_for(:session, url:"login") do |f| %>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to "Sign up instead", new_user_path %>
