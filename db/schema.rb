@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827203114) do
+ActiveRecord::Schema.define(version: 20170908062613) do
 
   create_table "messages", force: :cascade do |t|
     t.string   "sender"
@@ -31,5 +31,12 @@ ActiveRecord::Schema.define(version: 20170827203114) do
   end
 
   add_index "replies", ["message_id"], name: "index_replies_on_message_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
